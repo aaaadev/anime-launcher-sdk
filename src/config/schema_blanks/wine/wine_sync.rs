@@ -9,13 +9,13 @@ use enum_ordinalize::Ordinalize;
 pub enum WineSync {
     None,
     ESync,
-    FSync
+    MSync
 }
 
 impl Default for WineSync {
     #[inline]
     fn default() -> Self {
-        Self::FSync
+        Self::MSync
     }
 }
 
@@ -33,7 +33,7 @@ impl WineSync {
             Self::None => return HashMap::new(),
 
             Self::ESync => "WINEESYNC",
-            Self::FSync => "WINEFSYNC"
+            Self::MSync => "WINEMSYNC"
         };
 
         HashMap::from([(key, "1")])

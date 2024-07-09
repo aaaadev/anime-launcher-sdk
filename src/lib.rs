@@ -49,7 +49,7 @@ pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 pub fn is_available(binary: &str) -> bool {
     tracing::trace!("Checking package availability");
 
-    let Ok(mut child) = Command::new(binary).env("PATH", "/opt/homebrew/bin").stdout(Stdio::null()).stderr(Stdio::null()).spawn() else {
+    let Ok(mut child) = Command::new(binary).env("PATH", format!("{}:/opt/homebrew/bin", env!("PATH"))).stdout(Stdio::null()).stderr(Stdio::null()).spawn() else {
         return false;
     };
 

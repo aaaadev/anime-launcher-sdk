@@ -9,7 +9,8 @@ use enum_ordinalize::Ordinalize;
 pub enum HUD {
     None,
     DXVK,
-    MangoHUD
+    MangoHUD,
+    MetalHUD,
 }
 
 impl Default for HUD {
@@ -44,7 +45,10 @@ impl HUD {
                         ("MANGOHUD", "1")
                     ])
                 }
-            }
+            },
+            Self::MetalHUD => HashMap::from([
+                ("MTL_HUD_ENABLED", "1")
+            ]),
         }
     }
 }

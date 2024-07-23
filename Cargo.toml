@@ -8,8 +8,7 @@ repository = "https://github.com/an-anime-team/anime-launcher-sdk"
 edition = "2021"
 
 [dependencies.anime-game-core]
-git = "https://github.com/an-anime-team/anime-game-core"
-tag = "1.21.2"
+git = "https://github.com/aaaadev/anime-game-core"
 features = ["all"]
 
 # path = "../anime-game-core" # ! for dev purposes only
